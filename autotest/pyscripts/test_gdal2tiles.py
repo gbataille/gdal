@@ -39,7 +39,7 @@ import gdaltest             # noqa  # pylint: disable=E0401
 import test_py_scripts      # noqa  # pylint: disable=E0401
 
 
-def test_gdal2tiles_py_1():
+def test_gdal2tiles_py_simple():
     script_path = test_py_scripts.get_py_script('gdal2tiles')
     if script_path is None:
         return 'skip'
@@ -64,7 +64,7 @@ def test_gdal2tiles_py_1():
     return 'success'
 
 
-def test_gdal2tiles_py_2():
+def test_gdal2tiles_py_zoom_option():
 
     script_path = test_py_scripts.get_py_script('gdal2tiles')
     if script_path is None:
@@ -138,8 +138,8 @@ def test_does_not_error_when_source_bounds_close_to_tiles_bound():
 
 
 gdaltest_list = [
-    test_gdal2tiles_py_1,
-    test_gdal2tiles_py_2,
+    test_gdal2tiles_py_simple,
+    test_gdal2tiles_py_zoom_option,
     test_does_not_error_when_source_bounds_close_to_tiles_bound,
     test_gdal2tiles_py_cleanup,
     ]
