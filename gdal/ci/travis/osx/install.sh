@@ -41,3 +41,5 @@ gdal-config --cflags
 gdal-config --libs
 make -j3
 cd ../../gdal
+
+pip install pylint flake8

@@ -1,0 +1,8 @@
+[MASTER]
+ignore=
+# CODES IGNORED
+# C     : Convention
+# R     : Refactor
+# W0511 : TODOs in the code
+# W0703 : Catching too general exception Exception
+disable=R,C,I,W0703,W0511

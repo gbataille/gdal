@@ -11,3 +11,5 @@ cd ..
 # Run all the Python autotests
 #make -j test
 python run_all.py
+flake8 gdal/swig/python/scripts/gdal2tiles.py
+pylint gdal/swig/python/scripts/gdal2tiles.py
