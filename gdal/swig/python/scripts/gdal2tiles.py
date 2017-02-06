@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# ******************************************************************************
+#******************************************************************************
 #  $Id$
 #
 # Project:  Google Summer of Code 2007, 2008 (http://code.google.com/soc/)
@@ -98,7 +98,7 @@ MAXZOOMLEVEL = 32
 
 
 class GlobalMercator(object):
-    r"""
+    """
     TMS Global Mercator Profile
     ---------------------------
 

@@ -11,19 +11,19 @@ curl http://download.osgeo.org/proj/proj-datumgrid-1.5.tar.gz > proj-datumgrid-1
 tar xvzf proj-datumgrid-1.5.tar.gz
 cd ..
 ./configure --prefix=$HOME/install-proj
-make -j3
-make install
+make -j3 >/dev/null 2>&1
+make install >/dev/null 2>&1
 cd ..
 # build GDAL
 cd gdal
-CC="ccache gcc" CXX="ccache g++" ./configure --prefix=$HOME/install-gdal --enable-debug --with-jpeg12 --with-python --with-geotiff=internal --with-png=internal --with-static-proj4=$HOME/install-proj --with-sqlite3=/usr/local/opt/sqlite
-make USER_DEFS="-Wextra -Werror" -j3
+CC="ccache gcc" CXX="ccache g++" ./configure --prefix=$HOME/install-gdal --enable-debug --with-jpeg12 --with-python --with-geotiff=internal --with-png=internal --with-static-proj4=$HOME/install-proj --with-sqlite3=/usr/local/opt/sqlite >/dev/null 2>&1
+make USER_DEFS="-Wextra -Werror" -j3 >/dev/null 2>&1
 cd apps
-make USER_DEFS="-Wextra -Werror" test_ogrsf
+make USER_DEFS="-Wextra -Werror" test_ogrsf >/dev/null 2>&1
 echo "Show which shared libs got used:"
-otool -L .libs/ogrinfo
+otool -L .libs/ogrinfo >/dev/null 2>&1
 cd ..
-make install
+make install >/dev/null 2>&1
 export PATH=$HOME/install-gdal/bin:$PWD/apps/.libs:$PATH
 export DYLD_LIBRARY_PATH=$HOME/install-gdal/lib
 export GDAL_DATA=$HOME/install-gdal/share/gdal
@@ -39,7 +39,7 @@ echo $PATH
 gdal-config --version
 gdal-config --cflags
 gdal-config --libs
-make -j3
+make -j3 >/dev/null 2>&1
 cd ../../gdal
 
 pip install pylint flake8
